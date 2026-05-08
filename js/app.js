@@ -19,7 +19,7 @@ const estadoAplicacao = {
   editando: false,
 };
 
-const API_BASE_URL = "http://localhost:3000";
+const API_BASE_URL = "https://aula-9-api.onrender.com";
 
 componentes.statusApi.textContent = API_BASE_URL;
 
