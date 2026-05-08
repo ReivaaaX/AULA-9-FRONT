@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerenciador de Anotações</title>
+
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <main class="container-aplicacao">
+      <section class="topo-aplicacao">
+        <div>
+          <p class="subtitulo">Projeto CRUD - API de Anotações</p>
+          <h1>Bloco de Notas</h1>
+        </div>
+
+        <div class="status-api" id="statusApi">API conectada</div>
+      </section>
+
+      <section class="painel-principal" aria-label="Controle de anotacoes">
+        <form class="formulario-anotacao" id="formularioNota">
+          <input type="hidden" id="identificadorNota" />
+
+          <div class="cabecalho-formulario">
+            <h2 id="tituloFormulario">Criar anotação</h2>
+
+            <button
+              class="botao-secundario oculto"
+              id="botaoCancelar"
+              type="button"
+            >
+              Cancelar alteração
+            </button>
+          </div>
+
+          <label for="campoTitulo">Título</label>
+
+          <input
+            id="campoTitulo"
+            name="titulo"
+            type="text"
+            maxlength="80"
+            autocomplete="off"
+            required
+          />
+
+          <label for="campoConteudo">Conteúdo</label>
+
+          <textarea
+            id="campoConteudo"
+            name="conteudo"
+            rows="7"
+            maxlength="1200"
+            required
+          ></textarea>
+
+          <button class="botao-primario" id="botaoSalvar" type="submit">
+            Salvar anotação
+          </button>
+        </form>
+
+        <section class="painel-anotacoes" aria-live="polite">
+          <div class="cabecalho-painel">
+            <div>
+              <h2>Lista de anotações</h2>
+              <p id="quantidadeNotas">0 anotações</p>
+            </div>
+
+            <button class="botao-secundario" id="botaoAtualizar" type="button">
+              Recarregar
+            </button>
+          </div>
+
+          <div
+            class="mensagem-feedback"
+            id="mensagemFeedback"
+            role="status"
+          ></div>
+
+          <div class="lista-anotacoes" id="listaAnotacoes"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
